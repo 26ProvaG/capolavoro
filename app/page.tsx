@@ -17,41 +17,6 @@ export default function Portfolio() {
       tags: ["Arduino", "IoT", "React Native", "Firebase"],
       type: "Hardware",
     },
-    {
-      title: "Smart Home Dashboard",
-      description: "A web-based dashboard for controlling smart home devices and visualizing sensor data in real-time.",
-      image: "/placeholder.svg?height=200&width=300",
-      tags: ["Next.js", "Tailwind CSS", "MQTT", "Node.js"],
-      type: "Software",
-    },
-    {
-      title: "AI-Powered Robot Arm",
-      description: "Robotic arm controlled by computer vision for object recognition and manipulation tasks.",
-      image: "/placeholder.svg?height=200&width=300",
-      tags: ["Python", "OpenCV", "ROS", "Robotics"],
-      type: "Hardware",
-    },
-    {
-      title: "E-commerce Platform",
-      description: "Full-stack e-commerce solution with user authentication, product management, and secure payments.",
-      image: "/placeholder.svg?height=200&width=300",
-      tags: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
-      type: "Software",
-    },
-    {
-      title: "Custom Mechanical Keyboard",
-      description: "Designed and built a custom mechanical keyboard with programmable macros and RGB lighting.",
-      image: "/placeholder.svg?height=200&width=300",
-      tags: ["KiCad", "QMK Firmware", "3D Printing", "Electronics"],
-      type: "Hardware",
-    },
-    {
-      title: "Real-time Chat Application",
-      description: "A scalable chat application with real-time messaging, user presence, and group chat features.",
-      image: "/placeholder.svg?height=200&width=300",
-      tags: ["React", "Socket.IO", "Express.js", "MongoDB"],
-      type: "Software",
-    },
   ]
 
   const skills = [
