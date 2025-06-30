@@ -144,13 +144,13 @@ export default function Portfolio() {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-800 tracking-tight">
-              Featured{" "}
+              I miei{" "}
               <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
-                Projects
+                Progetti
               </span>
             </h2>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed font-light">
-              A showcase of my latest hardware and software creations, from IoT devices to web applications.
+              Una rubrica di tutti i miei lavori riguardandi l'IoT e l'elettronica.
             </p>
           </div>
 
