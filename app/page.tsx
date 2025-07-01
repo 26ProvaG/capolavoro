@@ -18,61 +18,22 @@ export default function Portfolio() {
       type: "Hardware",
       website: "https://rover-gm.netlify.app/", // Placeholder URL
     },
-    {
-      title: "Smart Home Dashboard",
-      description: "A web-based dashboard for controlling smart home devices and visualizing sensor data in real-time.",
-      image: "/placeholder.svg?height=200&width=300",
-      tags: ["Next.js", "Tailwind CSS", "MQTT", "Node.js"],
-      type: "Software",
-      website: "#", // Placeholder URL
-    },
-    {
-      title: "AI-Powered Robot Arm",
-      description: "Robotic arm controlled by computer vision for object recognition and manipulation tasks.",
-      image: "/placeholder.svg?height=200&width=300",
-      tags: ["Python", "OpenCV", "ROS", "Robotics"],
-      type: "Hardware",
-      website: "#", // Placeholder URL
-    },
-    {
-      title: "E-commerce Platform",
-      description: "Full-stack e-commerce solution with user authentication, product management, and secure payments.",
-      image: "/placeholder.svg?height=200&width=300",
-      tags: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
-      type: "Software",
-      website: "#", // Placeholder URL
-    },
-    {
-      title: "Custom Mechanical Keyboard",
-      description: "Designed and built a custom mechanical keyboard with programmable macros and RGB lighting.",
-      image: "/placeholder.svg?height=200&width=300",
-      tags: ["KiCad", "QMK Firmware", "3D Printing", "Electronics"],
-      type: "Hardware",
-      website: "#", // Placeholder URL
-    },
-    {
-      title: "Real-time Chat Application",
-      description: "A scalable chat application with real-time messaging, user presence, and group chat features.",
-      image: "/placeholder.svg?height=200&width=300",
-      tags: ["React", "Socket.IO", "Express.js", "MongoDB"],
-      type: "Software",
-      website: "#", // Placeholder URL
-    },
+
   ]
 
   const skills = [
     "Python",
     "C++",
-    "React/Next.js",
+    
     "Arduino",
-    "Raspberry Pi",
+ 
     "ESP32",
     "IoT",
-    "Machine Learning",
+
     "3D Printing",
     "PCB Design",
     "Web Development",
-    "Database Management",
+   
   ]
 
   return (
