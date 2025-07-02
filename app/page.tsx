@@ -16,7 +16,7 @@ export default function Portfolio() {
       image: "/Rover.jpeg?height=200&width=300",
       tags: ["ESP32", "IoT", "Arduino", "PCB Design"],
       type: "Hardware",
-      website: "https://rover-gm.netlify.app/", // Placeholder URL
+      website: "https://rover-gm.vercel.app/", // Placeholder URL
     },
 
   ]
