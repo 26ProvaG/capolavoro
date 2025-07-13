@@ -91,7 +91,7 @@ export default function Portfolio() {
                       Projects
                     </Link>
                     <Link
-                      href="#digital-agent" // New link for Digital Agent Services
+                      href="https://v0-digital-agent.vercel.app/" // New link for Digital Agent Services
                       className="text-slate-700 hover:text-blue-600 text-lg font-medium transition-colors"
                     >
                       Digital Agent
