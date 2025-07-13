@@ -91,7 +91,7 @@ export default function Portfolio() {
                       Projects
                     </Link>
                     <Link
-                      href="https://v0-digital-agent.vercel.app/" // New link for Digital Agent Services
+                      href="#digital-agent" // New link for Digital Agent Services
                       className="text-slate-700 hover:text-blue-600 text-lg font-medium transition-colors"
                     >
                       Digital Agent
@@ -249,7 +249,7 @@ export default function Portfolio() {
             size="lg"
             className="bg-gradient-to-r from-blue-600 via-blue-700 to-green-600 hover:from-blue-700 hover:via-blue-800 hover:to-green-700 text-white font-semibold py-3 px-8 md:py-4 md:px-10 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 text-base tracking-wide border-0 relative overflow-hidden group"
           >
-            <Link href="/digital-agent-services">
+            <Link href="https://v0-digital-agent.vercel.app/">
               {" "}
               {/* Placeholder link */}
               <span className="relative z-10 flex items-center">
