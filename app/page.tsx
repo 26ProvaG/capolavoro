@@ -13,7 +13,7 @@ export default function Portfolio() {
     {
       title: "Rover a due ruote",
       description: "Un progetto basato sul microcontrollore Espressif ESP32 S3 e materiali di riciclo",
-      image: "/Rover.jpeg",
+      image: "/Rover.jpeg?height=200&width=300",
       tags: ["ESP32", "IoT", "Arduino", "PCB Design"],
       type: "Hardware",
       website: "https://rover-gm.vercel.app/", // Placeholder URL
