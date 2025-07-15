@@ -1,401 +1,305 @@
-"use client"
-
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Github, Instagram, Mail, ArrowRight, Code, Cpu, MenuIcon, Globe } from "lucide-react" // Added Globe icon
-import Image from "next/image"
 import Link from "next/link"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { CheckIcon, GlobeIcon, CalendarDaysIcon, SearchIcon, QrCodeIcon, LifeBuoyIcon, PhoneIcon,GiftIcon } from "lucide-react"
 
-export default function Portfolio() {
-  const projects = [
-    {
-      title: "Rover a due ruote",
-      description: "Un progetto basato sul microcontrollore Espressif ESP32 S3 e materiali di riciclo",
-      image: "/Rover.jpeg?height=200&width=300",
-      tags: ["ESP32", "IoT", "Arduino", "PCB Design"],
-      type: "Hardware",
-      website: "https://rover-gm.vercel.app/", // Placeholder URL
-    },
-  ]
-
-  const skills = ["Python", "C++", "Arduino", "ESP32", "IoT", "3D Printing", "PCB Design", "Web Development"]
-
+export default function Component() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 text-slate-900 font-sans antialiased">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-xl z-50 border-b border-slate-200/60">
-        <div className="container mx-auto px-4 py-4 md:py-5">
-          <div className="flex justify-end items-center">
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
-              <Link
-                href="#home"
-                className="text-slate-600 hover:text-blue-600 transition-all duration-300 font-medium text-sm tracking-wide hover:scale-105 relative group"
-              >
-                Home
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-green-500 transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-              <Link
-                href="#projects"
-                className="text-slate-600 hover:text-blue-600 transition-all duration-300 font-medium text-sm tracking-wide hover:scale-105 relative group"
-              >
-                Projects
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-green-500 transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-              <Link
-                href="#digital-agent" // New link for Digital Agent Services
-                className="text-slate-600 hover:text-blue-600 transition-all duration-300 font-medium text-sm tracking-wide hover:scale-105 relative group"
-              >
-                Digital Agent
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-green-500 transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-              <Link
-                href="#about"
-                className="text-slate-600 hover:text-blue-600 transition-all duration-300 font-medium text-sm tracking-wide hover:scale-105 relative group"
-              >
-                About
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-green-500 transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-              <Link
-                href="#contact"
-                className="text-slate-600 hover:text-blue-600 transition-all duration-300 font-medium text-sm tracking-wide hover:scale-105 relative group"
-              >
-                Contact
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-green-500 transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            </div>
+    <div className="flex flex-col min-h-[100dvh] bg-gray-50 text-gray-800">
+      {/* Header (optional, but good for branding) */}
+      <header className="px-4 lg:px-6 h-14 flex items-center bg-white shadow-sm">
+        <Link href="#" className="flex items-center justify-center font-bold text-lg text-gray-900">
+          Digital Agent
+        </Link>
+        <nav className="ml-auto flex gap-4 sm:gap-6">
+          <Link href="#servizi" className="text-sm font-medium hover:underline underline-offset-4 text-gray-700">
+            Servizi
+          </Link>
+          <Link href="#pacchetti" className="text-sm font-medium hover:underline underline-offset-4 text-gray-700">
+            Pacchetti
+          </Link>
+          <Link href="#contatti" className="text-sm font-medium hover:underline underline-offset-4 text-gray-700">
+            Contatti
+          </Link>
+        </nav>
+      </header>
 
-            {/* Mobile Navigation (Hamburger Menu) */}
-            <div className="md:hidden flex items-center">
-              <Sheet>
-                <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="text-slate-600 hover:bg-slate-100">
-                    <MenuIcon className="h-6 w-6" />
-                    <span className="sr-only">Toggle navigation menu</span>
-                  </Button>
-                </SheetTrigger>
-                <SheetContent side="right" className="w-[250px] sm:w-[300px] bg-white/95 backdrop-blur-xl p-6">
-                  <nav className="flex flex-col gap-6 pt-8">
-                    <Link
-                      href="#home"
-                      className="text-slate-700 hover:text-blue-600 text-lg font-medium transition-colors"
-                    >
-                      Home
-                    </Link>
-                    <Link
-                      href="#projects"
-                      className="text-slate-700 hover:text-blue-600 text-lg font-medium transition-colors"
-                    >
-                      Projects
-                    </Link>
-                    <Link
-                      href="#digital-agent" // New link for Digital Agent Services
-                      className="text-slate-700 hover:text-blue-600 text-lg font-medium transition-colors"
-                    >
-                      Digital Agent
-                    </Link>
-                    <Link
-                      href="#about"
-                      className="text-slate-700 hover:text-blue-600 text-lg font-medium transition-colors"
-                    >
-                      About
-                    </Link>
-                    <Link
-                      href="#contact"
-                      className="text-slate-700 hover:text-blue-600 text-lg font-medium transition-colors"
-                    >
-                      Contact
-                    </Link>
-                  </nav>
-                </SheetContent>
-              </Sheet>
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-gray-100 to-white">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-8 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_600px] items-center">
+              <div className="flex flex-col justify-center space-y-6 text-center lg:text-left">
+                <div className="space-y-4">
+                  <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none text-gray-900">
+                    Digitalizza il tuo business, semplifica la tua vita.
+                  </h1>
+                  <p className="max-w-[700px] text-gray-600 md:text-xl mx-auto lg:mx-0">
+                    {
+                      "Aiuto attività locali, organizzazioni e negozi a crescere online, attirare nuovi clienti e gestire tutto in modo più semplice grazie a strumenti digitali su misura."
+                    }
+                  </p>
+                </div>
+                <div className="flex flex-col gap-4 min-[400px]:flex-row justify-center lg:justify-start">
+                  <Link href="#servizi">
+                    <Button className="inline-flex h-12 items-center justify-center rounded-md bg-gray-900 px-8 text-base font-medium text-white shadow transition-colors hover:bg-gray-700 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+                      Scopri i servizi
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+              <Image
+                src="/Agent.jpg?height=550&width=550"
+                width="550"
+                height="550"
+                alt="Digital Transformation"
+                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
+              />
             </div>
           </div>
-        </div>
-      </nav>
+        </section>
 
-      {/* Hero Section */}
-      <section id="home" className="relative pt-36 pb-28 px-4 md:px-6 overflow-hidden">
-        <div className="container mx-auto text-center relative z-10">
-          <div className="max-w-5xl mx-auto">
-            <h1 className="text-5xl md:text-8xl font-black mb-6 md:mb-8 leading-tight md:leading-[0.9] tracking-tight">
-              <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-green-600 bg-clip-text text-transparent drop-shadow-sm">
-                I miei Lavori
-              </span>
-            </h1>
-            <p className="text-lg md:text-2xl text-slate-600 max-w-4xl mx-auto mb-10 md:mb-12 leading-relaxed font-light tracking-wide">
-              Progettazione di sistemi elettronici dotati di microcontrollori in combinazione ad altre componenti per
-              creare progetti creativi ed innovativi.
-            </p>
-
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-blue-600 via-blue-700 to-green-600 hover:from-blue-700 hover:via-blue-800 hover:to-green-700 text-white font-semibold py-3 px-8 md:py-4 md:px-10 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 text-base tracking-wide border-0 relative overflow-hidden group"
-              onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-            >
-              <span className="relative z-10">Esplora Progetti</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            </Button>
-          </div>
-        </div>
-        {/* Enhanced gradient background */}
-        <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-blue-50/80 via-blue-25/40 to-transparent"></div>
-        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-green-50/60 via-green-25/30 to-transparent"></div>
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-50/40 to-transparent"></div>
-      </section>
-
-      {/* Featured Projects */}
-      <section id="projects" className="py-16 md:py-20 px-4 md:px-6 bg-gradient-to-b from-slate-50/50 to-white">
-        <div className="container mx-auto">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-slate-800 tracking-tight">
-              Featured{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
-                {"Progetti"}
-              </span>
-            </h2>
-            <p className="text-base md:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed font-light">
-              Una rubrica di tutti i miei progetti riguardanti l'IoT e l'elettronica
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {projects.map((project, index) => (
-              <Card
-                key={index}
-                className="bg-white/80 backdrop-blur-sm border border-slate-200/60 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 group overflow-hidden hover:-translate-y-2 hover:scale-[1.02]"
-              >
-                <CardHeader className="p-0">
-                  <div className="relative overflow-hidden rounded-t-3xl">
-                    <Image
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      width={300}
-                      height={200}
-                      className="w-full h-48 md:h-52 object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="absolute top-4 right-4">
-                      <Badge
-                        variant="secondary"
-                        className={`text-xs font-semibold px-3 py-1.5 rounded-full backdrop-blur-md border-0 shadow-lg ${
-                          project.type === "Hardware"
-                            ? "bg-orange-100/90 text-orange-700 shadow-orange-200/50"
-                            : "bg-blue-100/90 text-blue-700 shadow-blue-200/50"
-                        }`}
-                      >
-                        {project.type === "Hardware" ? (
-                          <Cpu className="w-3 h-3 mr-1.5 inline-block" />
-                        ) : (
-                          <Code className="w-3 h-3 mr-1.5 inline-block" />
-                        )}
-                        {project.type}
-                      </Badge>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent className="p-6 md:p-7">
-                  <CardTitle className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-slate-800 group-hover:text-blue-600 transition-colors duration-300 tracking-tight">
-                    {project.title}
-                  </CardTitle>
-                  <CardDescription className="text-sm text-slate-600 mb-4 md:mb-5 leading-relaxed font-light">
-                    {project.description}
-                  </CardDescription>
-                  <div className="flex flex-wrap gap-2 mb-5 md:mb-6">
-                    {project.tags.map((tag, tagIndex) => (
-                      <Badge
-                        key={tagIndex}
-                        variant="outline"
-                        className="text-xs border-slate-300/60 text-slate-600 bg-slate-50/50 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-700 transition-all duration-300 rounded-lg px-2.5 py-1"
-                      >
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                  <Button
-                    asChild
-                    variant="ghost"
-                    className="w-full text-blue-600 hover:bg-blue-50 hover:text-blue-700 transition-all duration-300 font-semibold rounded-xl py-2.5 group/btn"
-                  >
-                    <a href={project.website} target="_blank" rel="noopener noreferrer">
-                      View Details{" "}
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Digital Agent Services Section */}
-      <section id="digital-agent" className="py-16 md:py-20 px-4 md:px-6 bg-gradient-to-b from-white to-blue-50/30">
-        <div className="container mx-auto text-center max-w-3xl">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-slate-800 tracking-tight">
-            Servizi{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
-              Digital Agent
-            </span>
-          </h2>
-          <p className="text-base md:text-lg text-slate-600 mb-10 md:mb-12 leading-relaxed font-light">
-            Offro servizi di consulenza e sviluppo per aiutarti a navigare nel mondo digitale. Dalla creazione di siti
-            web alla gestione della tua presenza online, sono qui per supportarti.
-          </p>
-          <Button
-            asChild
-            size="lg"
-            className="bg-gradient-to-r from-blue-600 via-blue-700 to-green-600 hover:from-blue-700 hover:via-blue-800 hover:to-green-700 text-white font-semibold py-3 px-8 md:py-4 md:px-10 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 text-base tracking-wide border-0 relative overflow-hidden group"
-          >
-            <Link href="https://v0-digital-agent.vercel.app/">
-              {" "}
-              {/* Placeholder link */}
-              <span className="relative z-10 flex items-center">
-                <Globe className="w-5 h-5 mr-3" />
-                Scopri di più
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            </Link>
-          </Button>
-        </div>
-      </section>
-
-      {/* About Me */}
-      <section id="about" className="py-16 md:py-20 px-4 md:px-6 bg-white">
-        <div className="container mx-auto">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-slate-800 tracking-tight py-0">
-                About{" "}
-                <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">Me</span>
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
-              <div className="space-y-6">
-                <p className="text-base md:text-lg text-slate-700 leading-relaxed font-light shadow-none py-3 my-4 text-left">
-                  Sono un diciasettene come tanti altri ma grazie alla mia curiosità è nata la scintilla che mi ha fatto
-                  scoprire il mondo dell'elettronica e dell'IoT. Cerco di trovare soluzioni pratiche ed innovative ai
-                  problemi quotidiani o altrimenti cerco di creare qualcosa fuori dagli schemi pensando sempre che la
-                  tecnologia debba essere sempre al servizio di tutti.
+        {/* Services Section */}
+        <section id="servizi" className="w-full py-12 md:py-24 lg:py-32 bg-white">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-6 text-center">
+              <div className="space-y-4">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gray-900">
+                  I miei servizi digitali per te
+                </h2>
+                <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Soluzioni concrete per portare la tua attività al livello successivo.
                 </p>
-                <div className="flex flex-wrap gap-4 pt-4">
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="sm"
-                    className="border-slate-300 text-slate-700 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 bg-transparent transition-all duration-300 rounded-xl px-6 py-2.5 font-medium shadow-lg"
-                  >
-                    <a href="https://github.com/26Giammy" target="_blank" rel="noopener noreferrer">
-                      <Github className="w-4 h-4 mr-2" />
-                      GitHub
-                    </a>
-                  </Button>
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="sm"
-                    className="border-slate-300 text-slate-700 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 bg-transparent transition-all duration-300 rounded-xl px-6 py-2.5 font-medium shadow-lg"
-                  >
-                    <a href="https://instagram.com/gianmarco.marino" target="_blank" rel="noopener noreferrer">
-                      <Instagram className="w-4 h-4 mr-2" />
-                      Instagram
-                    </a>
-                  </Button>
-                </div>
               </div>
+            </div>
+            <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 sm:grid-cols-2 md:gap-12 lg:grid-cols-3 xl:grid-cols-5">
+              <Card className="flex flex-col items-center p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                <GlobeIcon className="h-10 w-10 text-gray-700 mb-4" />
+                <CardTitle className="text-lg font-semibold mb-2">Sito Web Professionale</CardTitle>
+                <CardContent className="text-sm text-gray-600 p-0">
+                  {"Una vetrina online moderna, chiara e personalizzata, visibile da ogni dispositivo."}
+                </CardContent>
+              </Card>
+              <Card className="flex flex-col items-center p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                <CalendarDaysIcon className="h-10 w-10 text-gray-700 mb-4" />
+                <CardTitle className="text-lg font-semibold mb-2">Sistema di Prenotazione</CardTitle>
+                <CardContent className="text-sm text-gray-600 p-0">
+                  {"Gestisci appuntamenti in modo ordinato e automatico, senza carta e penna."}
+                </CardContent>
+              </Card>
+              <Card className="flex flex-col items-center p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                <SearchIcon className="h-10 w-10 text-gray-700 mb-4" />
+                <CardTitle className="text-lg font-semibold mb-2">Ottimizzazione Google</CardTitle>
+                <CardContent className="text-sm text-gray-600 p-0">
+                  {"Ti faccio trovare facilmente su Google Search e Maps, dove i tuoi clienti ti cercano."}
+                </CardContent>
+              </Card>
+              <Card className="flex flex-col items-center p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                <QrCodeIcon className="h-10 w-10 text-gray-700 mb-4" />
+                <CardTitle className="text-lg font-semibold mb-2">QR per Recensioni</CardTitle>
+                <CardContent className="text-sm text-gray-600 p-0">
+                  {"Raccogli più recensioni con un QR code che guida il cliente a lasciare feedback in pochi secondi."}
+                </CardContent>
+              </Card>
+              <Card className="flex flex-col items-center p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                <LifeBuoyIcon className="h-10 w-10 text-gray-700 mb-4" />
+                <CardTitle className="text-lg font-semibold mb-2">Supporto Dedicato</CardTitle>
+                <CardContent className="text-sm text-gray-600 p-0">
+                  {"Ti seguo passo dopo passo, anche dopo la consegna, con assistenza personalizzata."}
+                </CardContent>
+              </Card>
 
-              <div className="bg-gradient-to-br from-slate-50 to-blue-50/30 p-6 md:p-8 rounded-3xl border border-slate-200/60 shadow-lg">
-                <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
-                  Skills &amp; Tecnologie
-                </h3>
-                <div className="flex flex-wrap gap-2 md:gap-3">
-                  {skills.map((skill, index) => (
-                    <Badge
-                      key={index}
-                      variant="secondary"
-                      className="bg-white/80 text-slate-700 border border-slate-200/60 hover:bg-blue-50 hover:text-blue-700 hover:border-blue-300 transition-all duration-300 px-3 py-1.5 md:px-4 md:py-2 rounded-xl font-medium shadow-sm hover:shadow-md"
+               <Card className="flex flex-col items-center p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                <GiftIcon className="h-10 w-10 text-gray-700 mb-4" />
+                <CardTitle className="text-lg font-semibold mb-2">Sistema di Royalties</CardTitle>
+                <CardContent className="text-sm text-gray-600 p-0">
+                  {"Un sistema per creare e consolidare la fidelity del cliente, potente e persuasivo"}
+                </CardContent>
+              </Card>
+
+            </div>
+          </div>
+        </section>
+
+        {/* Service Packages Section */}
+        <section id="pacchetti" className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-6 text-center mb-12">
+              <div className="space-y-4">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gray-900">
+                  Scegli il pacchetto perfetto per te
+                </h2>
+                <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Soluzioni flessibili per ogni esigenza e budget.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid max-w-5xl gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+              {/* Base Package */}
+              <Card className="flex flex-col justify-between p-6 shadow-lg border border-gray-200 h-full">
+                <CardHeader className="pb-4 text-center">
+                  <CardTitle className="text-2xl font-bold text-gray-900">Pacchetto Base</CardTitle>
+                  <p className="text-gray-500">Per iniziare la tua presenza online.</p>
+                </CardHeader>
+                <CardContent className="flex-1 flex flex-col items-center">
+                  <ul className="space-y-3 text-left text-gray-700 mb-8">
+                    <li className="flex items-center">
+                      <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                      Sito Web Vetrina One-Page
+                    </li>
+                    <li className="flex items-center">
+                      <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                      Ottimizzazione Google My Business
+                    </li>
+                    <li className="flex items-center">
+                      <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                      Supporto via  Whatsapp o Email
+                    </li>
+                  </ul>
+                  <Button className="w-full bg-gray-900 text-white hover:bg-gray-700">
+                    <Link
+                      href="#contatti"
+                      className="flex items-center justify-center text-white text-base font-normal"
                     >
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
+                      Contattami per Base
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* Avanzato Package */}
+              <Card className="flex flex-col justify-between p-6 shadow-lg border border-gray-200 bg-white relative h-full">
+                <CardHeader className="pb-4 text-center">
+                  <CardTitle className="text-2xl font-bold text-gray-900">Pacchetto Avanzato</CardTitle>
+                  <p className="text-gray-500">Cresci e gestisci meglio la tua attività.</p>
+                </CardHeader>
+                <CardContent className="flex-1 flex flex-col items-center">
+                  <ul className="space-y-3 text-left text-gray-700 mb-8">
+                   
+                    <li className="flex items-center">
+                      <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                      Tutto il Pacchetto Base
+                    </li>
+                    <li className="flex items-center">
+                      <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                      Sito Web Completo (fino a 5 pagine)
+                    </li>
+                    <li className="flex items-center">
+                      <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                      Sistema di Prenotazione Online
+                    </li>
+                    <li className="flex items-center">
+                      <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                      Ottimizzazione Google Avanzata
+                    </li>
+                    <li className="flex items-center">
+                      <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                      {"Analytics base"}
+                    </li>
+                    <li className="flex items-center">
+                      <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                      Supporto Prioritario
+                    </li>
+                  </ul>
+                  <Button className="w-full bg-gray-900 text-white hover:bg-gray-700">
+                    <Link
+                      href="#contatti"
+                      className="flex items-center justify-center text-white text-base font-normal"
+                    >
+                      Contattami per Avanzato
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* Completo Package */}
+              <Card className="flex flex-col justify-between p-6 shadow-lg border border-gray-200 h-full">
+                <CardHeader className="pb-4 text-center">
+                  <CardTitle className="text-2xl font-bold text-gray-900">Pacchetto Completo</CardTitle>
+                  <p className="text-gray-500">La soluzione all-in-one per il successo digitale.</p>
+                </CardHeader>
+                <CardContent className="flex-1 flex flex-col items-center">
+                  <ul className="space-y-3 text-left text-gray-700 mb-8">
+                  <li className="flex items-center">
+                      <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                      Tutto il Pacchetto Avanzato
+                    </li>
+                    
+    <li className="flex items-center">
+                      <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                     Sistema di Raccolta Punti con dashboard cliente
+                    </li>
+
+                    <li className="flex items-center">
+                      <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                      Sito Web Personalizzato Illimitato
+                    </li>
+
+  
+                    <li className="flex items-center">
+                      <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                      “Catalogo premi” personalizzato
+                    </li>
+                    <li className="flex items-center">
+                      <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                      Campagna Email “Riattiva Clienti” (su richiesta)
+                    </li>
+                    <li className="flex items-center">
+                      <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                      Consulenza Strategica Mensile
+                    </li>
+                    <li className="flex items-center">
+                      <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                      Supporto 24/7
+                    </li>
+                  </ul>
+                  <Button className="w-full bg-gray-900 text-white hover:bg-gray-700">
+                    <Link
+                      href="#contatti"
+                      className="flex items-center justify-center text-white text-base font-normal"
+                    >
+                      Contattami per Completo
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Contact */}
-      <section id="contact" className="py-16 md:py-20 px-4 md:px-6 bg-gradient-to-b from-slate-50/50 to-white">
-        <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-slate-800 tracking-tight">
-              Let's{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">Connect</span>
-            </h2>
-            <p className="text-base md:text-lg text-slate-600 mb-10 md:mb-12 leading-relaxed font-light max-w-2xl mx-auto">
-              Vuoi collaborare con me o hai un'idea per un progetto? Non esitare a contattarmi!
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-12">
-              <Card className="bg-white/80 backdrop-blur-sm border border-slate-200/60 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group">
-                <CardContent className="p-6 md:p-8 text-center">
-                  <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-blue-100 to-green-100 rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Mail className="w-7 h-7 md:w-8 md:h-8 text-blue-600" />
-                  </div>
-                  <h3 className="font-bold mb-1 md:mb-2 text-slate-800 text-base md:text-lg">Email</h3>
-                  <p className="text-slate-600 text-sm font-medium">marigiam026@gmail.com</p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-white/80 backdrop-blur-sm border border-slate-200/60 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group">
-                <CardContent className="p-6 md:p-8 text-center">
-                  <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-blue-100 to-green-100 rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Github className="w-7 h-7 md:w-8 md:h-8 text-blue-600" />
-                  </div>
-                  <h3 className="font-bold mb-1 md:mb-2 text-slate-800 text-base md:text-lg">GitHub</h3>
-                  <p className="text-slate-600 text-sm font-medium">26Giammy</p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-white/80 backdrop-blur-sm border border-slate-200/60 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group">
-                <CardContent className="p-6 md:p-8 text-center">
-                  <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-blue-100 to-green-100 rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Instagram className="w-7 h-7 md:w-8 md:h-8 text-blue-600" />
-                  </div>
-                  <h3 className="font-bold mb-1 md:mb-2 text-slate-800 text-base md:text-lg">Instagram</h3>
-                  <p className="text-slate-600 text-sm font-medium">gianmarco.marino</p>
-                </CardContent>
-              </Card>
+        {/* WhatsApp Contact Banner */}
+        <section id="contatti" className="w-full py-12 md:py-24 lg:py-32 bg-gray-900 text-white">
+          <div className="container px-4 md:px-6 text-center">
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                {"Vuoi vedere una demo o hai dei dubbi?"}
+              </h2>
+              <p className="max-w-[800px] mx-auto text-gray-300 md:text-xl/relaxed py-4">
+                {"Ti mostro come possiamo trasformare digitalmente la tua attività, senza impegno."}
+              </p>
+              <Link href="https://wa.me/3773844243" target="_blank" rel="noopener noreferrer">
+                <Button className="inline-flex h-14 items-center justify-center rounded-md bg-green-500 px-10 text-lg font-medium text-white shadow-lg transition-colors hover:bg-green-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400 focus-visible:ring-offset-2">
+                  <PhoneIcon className="h-6 w-6 mr-3" />
+                  Scrivimi su WhatsApp
+                </Button>
+              </Link>
             </div>
-
-            <Button
-              asChild
-              size="lg"
-              className="bg-gradient-to-r from-blue-600 via-blue-700 to-green-600 hover:from-blue-700 hover:via-blue-800 hover:to-green-700 text-white font-semibold py-3 px-8 md:py-4 md:px-10 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 text-base tracking-wide border-0 relative overflow-hidden group"
-            >
-              <a href="mailto:marigiam026@gmail.com">
-                <span className="relative z-10 flex items-center">
-                  <Mail className="w-5 h-5 mr-3" />
-                  Start a Conversation
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </a>
-            </Button>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
       {/* Footer */}
-      <footer className="py-8 md:py-12 px-4 md:px-6 border-t border-slate-200/60 bg-white">
-        <div className="container mx-auto text-center">
-          <p className="text-slate-500 text-xs md:text-sm font-light tracking-wide">
-            © {new Date().getFullYear()} Gianmarco Marino. All rights reserved.
-          </p>
-        </div>
+      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t bg-white text-gray-600">
+        <p className="text-xs">&copy; {new Date().getFullYear()} Digital Agent. Tutti i diritti riservati.</p>
+        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
+          <Link href="#" className="text-xs hover:underline underline-offset-4">
+            Privacy Policy
+          </Link>
+          <Link href="#" className="text-xs hover:underline underline-offset-4">
+            Termini di Servizio
+          </Link>
+        </nav>
       </footer>
     </div>
   )
