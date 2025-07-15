@@ -50,7 +50,7 @@ export default function Component() {
                 </div>
               </div>
               <Image
-                src="/Agent.jpg?height=550&width=550"
+                src="/Agent.jpg"
                 width="550"
                 height="550"
                 alt="Digital Transformation"
