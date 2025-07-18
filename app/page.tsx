@@ -18,9 +18,17 @@ export default function Portfolio() {
       type: "Hardware",
       website: "https://rover-gm.vercel.app/", // Placeholder URL
     },
+    {
+      title: "TrackSight",
+      description: "Un gadget personale dalle grandi funzionalità ma dal design minimal ",
+      image: "",
+      tags: ["ESP32", "IoT", "PlatformIO", "Gadgets Personali" ],
+      type: "Hardware",
+      website: "https://gm-tracksight.vercel.app/", // Placeholder URL
+    },
   ]
 
-  const skills = ["Python", "C++", "Arduino", "ESP32", "IoT", "3D Printing", "PCB Design", "Web Development"]
+  const skills = ["Python", "C++", "Arduino", "ESP32", "IoT", "3D Printing", "PCB Design", "Web Development", "PlatformIO", "Gadgets Personali"]
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 text-slate-900 font-sans antialiased">
