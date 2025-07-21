@@ -21,7 +21,7 @@ export default function Portfolio() {
     {
       title: "TrackSight",
       description: "Un gadget personale dalle grandi funzionalità ma dal design minimal ",
-      image: "",
+      image: "/TrackSight 1.jpeg?height=200&width=300",
       tags: ["ESP32", "IoT", "PlatformIO", "Gadgets Personali" ],
       type: "Hardware",
       website: "https://gm-tracksight.vercel.app/", // Placeholder URL
