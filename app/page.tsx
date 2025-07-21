@@ -307,7 +307,7 @@ export default function Portfolio() {
                     size="sm"
                     className="border-slate-300 text-slate-700 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 bg-transparent transition-all duration-300 rounded-xl px-6 py-2.5 font-medium shadow-lg"
                   >
-                    <a href="https://instagram.com/gianmarco.marino" target="_blank" rel="noopener noreferrer">
+                    <a href="https://instagram.com/_gianmarco.marino" target="_blank" rel="noopener noreferrer">
                       <Instagram className="w-4 h-4 mr-2" />
                       Instagram
                     </a>
@@ -375,7 +375,7 @@ export default function Portfolio() {
                     <Instagram className="w-7 h-7 md:w-8 md:h-8 text-blue-600" />
                   </div>
                   <h3 className="font-bold mb-1 md:mb-2 text-slate-800 text-base md:text-lg">Instagram</h3>
-                  <p className="text-slate-600 text-sm font-medium">gianmarco.marino</p>
+                  <p className="text-slate-600 text-sm font-medium">_gianmarco.marino</p>
                 </CardContent>
               </Card>
             </div>
